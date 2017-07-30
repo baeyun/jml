@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JML Tests</title>
+<style type="text/css">
+body {
+	background-color: #eee;
+	color: #555;
+	font-family: Helvetica;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 30px;
+}
+.content {
+	margin: 35px auto;
+	max-width: 750px;
+	background-color: #fff;
+	border-radius: 2px;
+	padding: 15px;
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.15);
+}
+.code-sample {
+	margin: 0 0 50px;
+}
+.code-sample pre {
+	background-color: #333;
+	color: #0f0;
+	border-radius: 3px 3px 0 0;
+	border-color: #333;
+	border-style: solid;
+	border-width: 1px 1px 0;
+	padding: 20px 10px;
+	margin: 0;
+	overflow-x: auto;
+}
+.code-sample .preview {
+	border-radius: 0 0 3px 3px;
+	padding: 20px;
+	border-color: #333;
+	border-style: solid;
+	border-width: 0 1px 1px;
+}
+</style>
+</head>
+<body>
+
+	<div class="content">
+		<h1>JML Usage Examples</h1>
+		<hr>
+		<h3>Basic Syntax</h3>
+		<div class="code-sample">
+<pre>
+div(
+	h1({style: 'color: #c88100;'}, 'Hello, World!'),
+	p('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+)
+</pre>
+
+			<div class="preview">
+				<jml>
+				div(
+					h1({style: 'color: #c88100;'}, 'Hello, World!'),
+					p('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+				)
+				</jml>
+			</div>
+		</div>
+
+
+		<hr>
+		<h3>Great Live Update Feature</h3>
+		<div class="code-sample">
+<pre>
+div(
+	input({
+		jmlModal: 'myModal',
+		type: 'text',
+		placeholder: "Type here to see JML's live update feature",
+		// value: 'Alter this text',
+		style: 'width: 275px; padding: 10px; border: 1px solid lightblue; border-radius: 2px;'
+	}),
+	br(),
+	h3({jmlBind: 'myModal', style: 'color: #286bcf; text-transform: uppercase;'})
+)
+</pre>
+
+			<div class="preview">
+				<jml>
+				div(
+					input({
+						jmlModal: 'myModal',
+						type: 'text',
+						placeholder: "Type here to see JML's live update feature",
+						// value: 'Alter this text',
+						style: 'width: 275px; padding: 10px; border: 1px solid lightblue; border-radius: 2px;'
+					}),
+					br(),
+					h3({jmlBind: 'myModal', style: 'color: #286bcf; text-transform: uppercase;'}, 'Hi, World!')
+				)
+				</jml>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="src/jml.min.js"></script>
+
+</body>
+</html>
