@@ -9,6 +9,7 @@ JML is a super-lightweight (~2.18kB) JavaScript markup language based on the for
   - Total harmony with HTML, JavaScript & CSS
   - Live updates that resemble that of mostache.js
   - Support for all HTML5 elements
+  - Cross-browser support
 
 ### Installation
 
