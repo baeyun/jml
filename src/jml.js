@@ -46,7 +46,7 @@
 				});
 				
 				elements.forEach(function(el) {
-					window[el] = function() {
+					window['$' + el] = function() {
 						var elName = el,
 							elArgs = arguments;
 
@@ -54,11 +54,17 @@
 					};
 				});
 			},
-			run: function() {
-
-				// Initialize JML
-				jml.initElements();
-
+			initConditionals: function() {
+				window['$if'] = function(c, cTrue, cFalse) {
+					if (c) {
+						return cTrue;
+					} else {
+						if (cFalse)
+							return cFalse;
+					};
+				};
+			},
+			interpret: function() {
 				document.querySelectorAll('jml').forEach(function(el) {
 					if (el.hasAttribute('replace')) {
 						el.outerHTML = eval(el.textContent);
@@ -68,8 +74,20 @@
 					
 					el.removeAttribute('hidden');
 				});
+			},
+			run: function() {
 
+				// Initialize JML Conditionals
+				jml.initConditionals();
+
+				// Initialize JML
+				jml.initElements();
+				
+				// Live data update like mostache.js
 				jml.modal();
+
+				// Interpret the <jml> tag
+				jml.interpret();
 			}
 		};
 

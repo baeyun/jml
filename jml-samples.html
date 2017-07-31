@@ -50,17 +50,17 @@ h1, h2, h3, h4, h5, h6 {
 		<h3>Basic Syntax</h3>
 		<div class="code-sample">
 <pre>
-div(
-	h1({style: 'color: #c88100;'}, 'Hello, World!'),
-	p('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+$div(
+	$h1({style: 'color: #c88100;'}, 'Hello, World!'),
+	$p('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
 )
 </pre>
 
 			<div class="preview">
 				<jml>
-				div(
-					h1({style: 'color: #c88100;'}, 'Hello, World!'),
-					p('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+				$div(
+					$h1({style: 'color: #c88100;'}, 'Hello, World!'),
+					$p('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
 				)
 				</jml>
 			</div>
@@ -71,38 +71,87 @@ div(
 		<h3>Great Live Update Feature</h3>
 		<div class="code-sample">
 <pre>
-div(
-	input({
+$div(
+	$input({
 		jmlModal: 'myModal',
 		type: 'text',
 		placeholder: "Type here to see JML's live update feature",
 		// value: 'Alter this text',
 		style: 'width: 275px; padding: 10px; border: 1px solid lightblue; border-radius: 2px;'
 	}),
-	br(),
-	h3({jmlBind: 'myModal', style: 'color: #286bcf; text-transform: uppercase;'})
+	$br(),
+	$h3({jmlBind: 'myModal', style: 'color: #286bcf; text-transform: uppercase;'})
 )
 </pre>
 
 			<div class="preview">
 				<jml>
-				div(
-					input({
+				$div(
+					$input({
 						jmlModal: 'myModal',
 						type: 'text',
 						placeholder: "Type here to see JML's live update feature",
 						// value: 'Alter this text',
 						style: 'width: 275px; padding: 10px; border: 1px solid lightblue; border-radius: 2px;'
 					}),
-					br(),
-					h3({jmlBind: 'myModal', style: 'color: #286bcf; text-transform: uppercase;'}, 'Hi, World!')
+					$br(),
+					$h3({jmlBind: 'myModal', style: 'color: #286bcf; text-transform: uppercase;'}, 'Hi, World!')
+				)
+				</jml>
+			</div>
+		</div>
+
+
+		<hr>
+		<h3>JML Logical Elements</h3>
+		<h4>The IF element</h4>
+		<div class="code-sample">
+<pre>
+$div(
+	$if(
+		true,
+		$h1('The IF element is working!'),
+		$h3('The IF element is working!')
+	)
+)
+</pre>
+
+			<div class="preview">
+				<jml>
+				$div(
+					$if(true, $h1('The IF element is working!'), $h3('The IF element is working!'))
+				)
+				</jml>
+			</div>
+		</div>
+		<h4>The IF element</h4>
+		<div class="code-sample">
+<pre>
+$div(
+	$if(
+		true,
+		$h1({style: 'color: red;'},'The IF element is working!'),
+		$h1({style: 'color: blue;'},'The IF element is working!')
+	)
+)
+</pre>
+
+			<div class="preview">
+				<jml>
+				$div(
+					$if(
+						true,
+						$h1({style: 'color: red;'},'The IF element is working!'),
+						$h1({style: 'color: blue;'},'The IF element is working!')
+					)
 				)
 				</jml>
 			</div>
 		</div>
 	</div>
 
-<script type="text/javascript" src="src/jml.min.js"></script>
+<!-- <script type="text/javascript" src="src/jml.min.js"></script> -->
+<script type="text/javascript" src="src/jml.js"></script>
 
 </body>
 </html>
