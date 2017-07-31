@@ -64,6 +64,38 @@
 					};
 				};
 			},
+			// THE LOOPS AINT' GOING WELL
+			initLoops: function() {
+				// @todo - allow edit of the conditions
+				window['$for'] = function(toIterate) {
+					var iteration = null;
+
+					for (var i = 0; i < 5; i++) {
+						if (!iteration) {
+							iteration = toIterate;
+						} else {
+							iteration += toIterate;
+						};
+					};
+
+					return iteration;
+				};
+				
+				// @todo - figure it out!
+				window['$while'] = function(c, toIterate) {
+					var iteration = null;
+
+					while(c) {
+						if (!iteration) {
+							iteration = toIterate;
+						} else {
+							iteration += toIterate;
+						};
+					}
+
+					return iteration;
+				};
+			},
 			interpret: function() {
 				document.querySelectorAll('jml').forEach(function(el) {
 					if (el.hasAttribute('replace')) {
@@ -80,7 +112,10 @@
 				// Initialize JML Conditionals
 				jml.initConditionals();
 
-				// Initialize JML
+				// Initialize JML Conditionals
+				jml.initLoops();
+
+				// Initialize JML HTML Elements
 				jml.initElements();
 				
 				// Live data update like mostache.js

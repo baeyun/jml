@@ -107,8 +107,8 @@ $div(
 
 
 		<hr>
-		<h3>JML Logical Operators</h3>
-		<h4>The IF operator</h4>
+		<h3>JML Conditionals</h3>
+		<h4>The IF Statement</h4>
 		<div class="code-sample">
 <pre>
 &lt;jml&gt;
@@ -154,6 +154,33 @@ $div(
 						3 < 1,
 						$h1({style: 'color: red;'},'Truthy value.'),
 						$h1({style: 'color: blue;'},'Falsy Value.')
+					)
+				)
+				</jml>
+			</div>
+		</div>
+
+
+		<hr>
+		<h3>JML Loops</h3>
+		<h4>The FOR Loop</h4>
+		<div class="code-sample">
+<pre>
+&lt;jml&gt;
+$ul(
+	$for(
+		i < 10,
+		$li(i + ' list item')
+	)
+)
+&lt;&sol;jml&gt;
+</pre>
+
+			<div class="preview">
+				<jml>
+				$ul(
+					$for(
+						$li(' list item')
 					)
 				)
 				</jml>
