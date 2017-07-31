@@ -50,10 +50,12 @@ h1, h2, h3, h4, h5, h6 {
 		<h3>Basic Syntax</h3>
 		<div class="code-sample">
 <pre>
+&lt;jml&gt;
 $div(
 	$h1({style: 'color: #c88100;'}, 'Hello, World!'),
 	$p('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
 )
+&lt;&sol;jml&gt;
 </pre>
 
 			<div class="preview">
@@ -71,6 +73,7 @@ $div(
 		<h3>Great Live Update Feature</h3>
 		<div class="code-sample">
 <pre>
+&lt;jml&gt;
 $div(
 	$input({
 		jmlModal: 'myModal',
@@ -82,6 +85,7 @@ $div(
 	$br(),
 	$h3({jmlBind: 'myModal', style: 'color: #286bcf; text-transform: uppercase;'})
 )
+&lt;&sol;jml&gt;
 </pre>
 
 			<div class="preview">
@@ -103,46 +107,53 @@ $div(
 
 
 		<hr>
-		<h3>JML Logical Elements</h3>
-		<h4>The IF element</h4>
+		<h3>JML Logical Operators</h3>
+		<h4>The IF operator</h4>
 		<div class="code-sample">
 <pre>
+&lt;jml&gt;
 $div(
 	$if(
-		true,
-		$h1('The IF element is working!'),
-		$h3('The IF element is working!')
+		3 > 1,
+		$h1({style: 'color: red;'},'Truthy value.'),
+		$h1({style: 'color: blue;'},'Falsy Value.')
 	)
 )
-</pre>
-
-			<div class="preview">
-				<jml>
-				$div(
-					$if(true, $h1('The IF element is working!'), $h3('The IF element is working!'))
-				)
-				</jml>
-			</div>
-		</div>
-		<h4>The IF element</h4>
-		<div class="code-sample">
-<pre>
-$div(
-	$if(
-		true,
-		$h1({style: 'color: red;'},'The IF element is working!'),
-		$h1({style: 'color: blue;'},'The IF element is working!')
-	)
-)
+&lt;&sol;jml&gt;
 </pre>
 
 			<div class="preview">
 				<jml>
 				$div(
 					$if(
-						true,
-						$h1({style: 'color: red;'},'The IF element is working!'),
-						$h1({style: 'color: blue;'},'The IF element is working!')
+						3 > 1,
+						$h1({style: 'color: red;'},'Truthy value.'),
+						$h1({style: 'color: blue;'},'Falsy Value.')
+					)
+				)
+				</jml>
+			</div>
+		</div>
+		<div class="code-sample">
+<pre>
+&lt;jml&gt;
+$div(
+	$if(
+		3 < 1,
+		$h1({style: 'color: red;'},'Truthy value.'),
+		$h1({style: 'color: blue;'},'Falsy Value.')
+	)
+)
+&lt;&sol;jml&gt;
+</pre>
+
+			<div class="preview">
+				<jml>
+				$div(
+					$if(
+						3 < 1,
+						$h1({style: 'color: red;'},'Truthy value.'),
+						$h1({style: 'color: blue;'},'Falsy Value.')
 					)
 				)
 				</jml>
