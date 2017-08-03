@@ -1,6 +1,6 @@
 # JML
 
-JML is a super-lightweight (~2.18kB) JavaScript markup language based on the formatting conventions that HTML uses. It was intended to lessen the continuosly annoying shifts made between the HTML markup and javascripting during development. It's currently in an experimental phase.
+JML is a super-lightweight (~2.18kB) JavaScript markup language based on the formatting conventions that HTML uses. It was intended to lessen the continuously annoying shifts made between the HTML markup and javascripting during development. It's currently in an experimental phase.
 
 ### Key Features
 
